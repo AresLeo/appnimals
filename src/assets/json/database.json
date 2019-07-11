@@ -1,0 +1,44 @@
+{
+    "protectoras":[
+        {
+            "nombreprote": "CAACB",
+            "ciudadprote": "Barcelona",
+            "especie": [
+                {
+                "perros": [
+                    {
+                        "nombre": "Rio",
+                        "sexo": "Macho",
+                        "edad": "",
+                        "tamaño": "Grande",
+                        "peso": "30kg",
+                        "ciudad": "Barcelona",
+                        "descripción": "Es un perro muy tranquilo",
+                        "vacunacion": true,
+                        "esterilizacion": true,
+                        "desparasitacion": true,
+                        "foto": "@/assets/images/rio.jpg"
+    
+                    }
+                ],
+                "gatos":[
+                    {
+                        "nombre": "Trufa",
+                        "sexo": "Macho",
+                        "edad": "1 año",
+                        "tamaño": "Mediano",
+                        "peso": "5kg",
+                        "descripción": "Es un gato cariñoso ",
+                        "esterilizacion": true,
+                        "desparasitacion": true,
+                        "foto": "@/assets/images/trufa.jpg"
+                    }
+                ]
+                }
+            ]
+            
+        }
+
+    ]
+
+}
