@@ -7,7 +7,13 @@ import BootstrapVue from 'bootstrap-vue'
 Vue.use(BootstrapVue)
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
-import 'vue-awesome/icons'
+import 'vue-awesome/icons';
+import 'bootstrap-css-only/css/bootstrap.min.css'; 
+import 'mdbvue/build/css/mdb.css';
+// Register dragscroll globally
+import VueDragscroll from 'vue-dragscroll'
+Vue.use(VueDragscroll)
+
 
 Vue.config.productionTip = false
 

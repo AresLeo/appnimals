@@ -1,9 +1,9 @@
 <template>
-    <v-content>
-        <h2>Especie</h2>
-    <buttonsAnimals></buttonsAnimals>
-    <buscador></buscador>
-    </v-content>
+    <div>
+        <buscador></buscador>
+        <buttonsAnimals></buttonsAnimals>
+    
+    </div>
 </template>
 <script>
 import buttonsAnimals from '@/components/buttonsAnimals.vue'

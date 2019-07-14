@@ -2,7 +2,7 @@
     "protectoras":[
         {
             "nombreprote": "CAACB",
-            "ciudadprote": "Barcelona",
+            "provinciaProte": "Barcelona",
             "especie": [
                 {
                 "perros": [
