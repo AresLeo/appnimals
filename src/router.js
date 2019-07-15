@@ -17,6 +17,11 @@ export default new Router({
       path: '/adopta',
       name: 'adopta',
       component: () => import(/* webpackChunkName: "adopta" */ './views/Adopta.vue')
+    },
+    {
+      path: '/protectoras',
+      name: 'protectoras',
+      component: () => import(/* webpackChunkName: "protectoras" */ './views/Protectoras.vue')
     }
   ]
 })

@@ -15,13 +15,14 @@ export default new Vuex.Store({
   mutations: {
     setDatabase(state, value){
       state.database = value;
+      this.state.database = value;
+      console.log("console" + database)
     },
     
+    
   },
-  mounted:{
-
-  },
-  actions: {
+  methods: {
+    
     getData(context){
       fetch('https://api.myjson.com/bins/cptcf')
       .then(res => res.json())
@@ -30,5 +31,11 @@ export default new Vuex.Store({
         console.log(json);
       });      
     },
+  },
+  actions: {
+    
+  },
+  created(){
+    this.getData();
   }
 })

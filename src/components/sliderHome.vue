@@ -63,12 +63,12 @@
         >
       </b-carousel-slide>
     </b-carousel>
-
+<!-- 
     <p class="mt-4">
       Slide #: {{ slide }}<br>
       Sliding: {{ sliding }}
        {{ imgs_slider}}
-    </p>
+    </p> -->
    </b-col>
   </b-row>
 </template>

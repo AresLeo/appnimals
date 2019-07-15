@@ -49,7 +49,8 @@
 
         </b-col>
     </b-row>
- 
+   
+
 </div>
 
 
@@ -58,7 +59,7 @@
 
 import { mdbBtn, mdbIcon, mdbFormInline, mdbInput, mdbContainer, mdbModal, mdbModalHeader, mdbModalBody, mdbModalFooter, mdbModalTitle } from 'mdbvue';
 export default {
-    props: ["database"],
+
     data(){
         return{
             name: "buscador",
@@ -66,6 +67,8 @@ export default {
             selected_sex: null,
             selected_size: null,
             login: false,
+            provincias: "",
+            status: ""
             
         };
 
@@ -84,18 +87,13 @@ export default {
         mdbModalTitle,
         },
     methods: {
-        cogerDatabase(){
       
-       
-    },
-    
-        },
-    computed:{
-        mostrar(){
-        return   this.$store.dispatch("getData");
         
-            }
-    }
+    },
+
+    computed:{
+
+    },
 }
 </script>
 
