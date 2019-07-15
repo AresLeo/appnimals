@@ -6,8 +6,6 @@
         </b-col>
          <b-col cols="3" class="d-flex justify-content-end">
 
-
-
     <mdb-btn  class="bt-filters mt-3" color="default" @click.native="login=true"><mdb-icon icon="sliders-h" class="ml-1 "/></mdb-btn>
     <mdb-modal :show="login" @close="login = false">
       <mdb-modal-header class="text-center">
@@ -17,7 +15,7 @@
         <h4>Provincia:</h4>
     <b-form-select v-model="selected_prov" class="mb-3">
         <option :value="null">Todas</option>
-        
+
         <!-- <option :value="Barcelona">Barcelona</option>
         <option :value="Madrid">Madrid</option>
         <option :value="ACoruna">A Coruña</option>
@@ -51,14 +49,7 @@
 
         </b-col>
     </b-row>
-   
-   <!-- <mdb-form-inline class="md-form">
-      <mdbIcon icon="search" />
-      <mdb-input type="text" placeholder="Buscar" aria-label="Buscar"/>
-    </mdb-form-inline> -->
-  
-
-  
+ 
 </div>
 
 
@@ -67,7 +58,7 @@
 
 import { mdbBtn, mdbIcon, mdbFormInline, mdbInput, mdbContainer, mdbModal, mdbModalHeader, mdbModalBody, mdbModalFooter, mdbModalTitle } from 'mdbvue';
 export default {
-    
+    props: ["database"],
     data(){
         return{
             name: "buscador",
@@ -75,7 +66,7 @@ export default {
             selected_sex: null,
             selected_size: null,
             login: false,
-
+            
         };
 
     },
@@ -91,7 +82,20 @@ export default {
         mdbModalBody,
         mdbModalFooter,
         mdbModalTitle,
-        }
+        },
+    methods: {
+        cogerDatabase(){
+      
+       
+    },
+    
+        },
+    computed:{
+        mostrar(){
+        return   this.$store.dispatch("getData");
+        
+            }
+    }
 }
 </script>
 
