@@ -69,9 +69,11 @@
                         "ciudad": "Barcelona",
                         "descripción": "Es un perro muy tranquilo",
                         "vacunacion": true,
+                        "microchip": true,
                         "esterilizacion": true,
                         "desparasitacion": true,
-                        "foto": "@/assets/images/rio.jpg"
+                        "foto": "@/assets/images/rio.jpg",
+                        "estado": "Adopción"
     
                     }],
                 "gatos":[
@@ -82,9 +84,12 @@
                         "tamaño": "Mediano",
                         "peso": "5kg",
                         "descripción": "Es un gato cariñoso ",
+                        "vacunacion": true,
+                        "microchip": true,
                         "esterilizacion": true,
                         "desparasitacion": true,
-                        "foto": "@/assets/images/trufa.jpg"
+                        "foto": "@/assets/images/trufa.jpg",
+                        "estado": "Adopción"
                     }]
                 }]
         }]

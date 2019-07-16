@@ -56,7 +56,7 @@
 
 </template>
 <script>
-
+import {mapState} from 'vuex';
 import { mdbBtn, mdbIcon, mdbFormInline, mdbInput, mdbContainer, mdbModal, mdbModalHeader, mdbModalBody, mdbModalFooter, mdbModalTitle } from 'mdbvue';
 export default {
 
@@ -92,6 +92,9 @@ export default {
     },
 
     computed:{
+        ...mapState([
+            'database'
+        ]),
 
     },
 }

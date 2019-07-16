@@ -22,6 +22,16 @@ export default new Router({
       path: '/protectoras',
       name: 'protectoras',
       component: () => import(/* webpackChunkName: "protectoras" */ './views/Protectoras.vue')
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: () => import(/* webpackChunkName: "formlogin" */ './views/formlogin.vue')
+    },
+    {
+      path: '/registro',
+      name: 'registro',
+      component: () => import(/* webpackChunkName: "registro" */ './views/registro.vue')
     }
   ]
 })
