@@ -52,45 +52,16 @@
         {"nprov": "Zamora"},
         {"nprov": "Zaragoza"}
         ],
-    
-    "protectoras":[
-        {
-            "nombreprote": "CAACB",
-            "provinciaProte": "Barcelona",
-            "especie": [
-                {
-                "perros": [
-                    {
-                        "nombre": "Rio",
-                        "sexo": "Macho",
-                        "edad": "",
-                        "tamaño": "Grande",
-                        "peso": "30kg",
-                        "ciudad": "Barcelona",
-                        "descripción": "Es un perro muy tranquilo",
-                        "vacunacion": true,
-                        "microchip": true,
-                        "esterilizacion": true,
-                        "desparasitacion": true,
-                        "foto": "@/assets/images/rio.jpg",
-                        "estado": "Adopción"
-    
-                    }],
-                "gatos":[
-                    {
-                        "nombre": "Trufa",
-                        "sexo": "Macho",
-                        "edad": "1 año",
-                        "tamaño": "Mediano",
-                        "peso": "5kg",
-                        "descripción": "Es un gato cariñoso ",
-                        "vacunacion": true,
-                        "microchip": true,
-                        "esterilizacion": true,
-                        "desparasitacion": true,
-                        "foto": "@/assets/images/trufa.jpg",
-                        "estado": "Adopción"
-                    }]
-                }]
-        }]
+    "pesos":[
+        {"peso": "< 1 kg"},
+        {"peso": "Entre 1 - 5 kg"},
+        {"peso": "Entre 5- 10 kg"},
+        {"peso": "Entre 10 - 15 kg"},
+        {"peso": "Entre 15 - 20 kg"},
+        {"peso": "Entre 20 - 30 kg"},
+        {"peso": "Entre 30 - 40 kg"},
+        {"peso": " + 40 kg"}
+
+    ]
 }
+ 

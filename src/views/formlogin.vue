@@ -27,11 +27,13 @@
       <mdb-btn color="info">Login</mdb-btn>
     </div>
   </form>
+      <button @click="logingoogle" color="default">Login con google</button>
 
 </mdb-container>
 
 </template>
 <script>
+import firebase from "firebase";
 import { mdbInput, mdbBtn , mdbContainer, mdbIcon} from 'mdbvue';
 export default {
 
@@ -46,8 +48,25 @@ export default {
         return{
             }
            
-      }
+      },
+      methods:{
+         logingoogle: function() {
+      var provider = new firebase.auth.GoogleAuthProvider(); // añadido desde documentación de firebase
+      firebase
+        .auth()
+        .signInWithPopup(provider) // añadido desde doc. de firebase. con esto sale un pop-up para que te autentifiques
+        .then(user => {
+          console.log(user);
+          if (user) {
+            this.$store.commit("setUsers", firebase.auth().currentUser); // En el store mediante el setUsers se guards nuestros datos de autentificación.
+          }
+        });
+      console.log("login");
+      
+      },
+      
     
+    }
 }
 </script>
 <style scoped>

@@ -1,19 +1,22 @@
 <template>
     <div>
-        <buscador></buscador>
-        <buttonsAnimals></buttonsAnimals>
-    
+        <modalfiltros></modalfiltros>
+        <!-- <buttonsAnimals></buttonsAnimals> -->
+        <fichaanimales></fichaanimales>
+
     </div>
 </template>
 <script>
 import buttonsAnimals from '@/components/buttonsAnimals.vue'
-import buscador from '@/components/buscador.vue'
+import modalfiltros from '@/components/modalfiltros.vue'
+import fichaanimales from '@/components/fichaanimales.vue'
 
 export default {
     name: "adopta",
     components: {
     buttonsAnimals,
-    buscador,
+    modalfiltros,
+    fichaanimales
     },
 }
 </script>

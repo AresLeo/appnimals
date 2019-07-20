@@ -6,39 +6,41 @@
         </b-col>
          <b-col cols="3" class="d-flex justify-content-end">
 
-    <mdb-btn  class="bt-filters mt-3" color="default" @click.native="login=true"><mdb-icon icon="sliders-h" class="ml-1 "/></mdb-btn>
-    <mdb-modal :show="login" @close="login = false">
+    <mdb-btn  class="bt-filters mt-3" color="default" @click.native="showfilters=true"><mdb-icon icon="sliders-h" class="ml-1 "/></mdb-btn>
+    <mdb-modal :show="showfilters" @close="showfilters = false">
       <mdb-modal-header class="text-center">
         <mdb-modal-title tag="h4" bold class="w-100">Afinar busqueda</mdb-modal-title>
       </mdb-modal-header>
       <mdb-modal-body class="mx-3 grey-text">
         <h4>Provincia:</h4>
-    <b-form-select v-model="selected_prov" class="mb-3">
+    <b-form-select v-model="select_prov" class="mb-3">
         <option :value="null">Todas</option>
+        <option v-for="(item, index) in $store.getters.getProvincias" :key="index"  :value="item.nprov">{{item.nprov}}</option>
 
-        <!-- <option :value="Barcelona">Barcelona</option>
-        <option :value="Madrid">Madrid</option>
-        <option :value="ACoruna">A Coruña</option>
-        <option :value="Albacete">Albacete</option>
-        <option :value="Cádiz">Cádiz</option> -->
     
     </b-form-select>
+     <h4>Especie:</h4>
+    <b-form-select v-model="select_esp" class="mb-3">
+     
+        <option :value="null">Todas</option>
+        <option v-for="(item, index) in $store.getters.getEspecies" :key="index"  :value="item.especie">{{item.especie}}</option>
+    
+    </b-form-select>
+
          <h4>Sexo:</h4>
-    <b-form-select v-model="selected_sex" class="mb-3">
+    <b-form-select v-model="select_sex" class="mb-3">
      
         <option :value="null">Todos</option>
-        <!-- <option :value="{ H: 'Hembra' }">Hembra</option>
-        <option :value="{ M: 'Macho' }">Macho</option> -->
+        <option :value="'Hembra'">Hembra</option>
+        <option :value="'Macho'">Macho</option>
     
     </b-form-select>
          <h4>Tamaño:</h4>
-    <b-form-select v-model="selected_size" class="mb-3">
+    <b-form-select v-model="select_size" class="mb-3">
      
         <option :value="null">Todos</option>
-        <!-- <option :value="{ XS: 'Mini' }">Mini</option>
-        <option :value="{ S: 'Pequeño' }">Pequeño</option>
-        <option :value="{ M: 'Mediano' }">Mediano</option>
-        <option :value="{ L: 'Grande' }">Grande</option> -->
+        <option v-for="(item, index) in $store.getters.getSize" :key="index"  :value="item.tamaño">{{item.tamaño}}</option>
+    
     
     </b-form-select>
       </mdb-modal-body>
@@ -50,23 +52,25 @@
         </b-col>
     </b-row>
    
+   <p>{{select_size}}</p>
 
 </div>
 
 
 </template>
 <script>
-import {mapState} from 'vuex';
+
 import { mdbBtn, mdbIcon, mdbFormInline, mdbInput, mdbContainer, mdbModal, mdbModalHeader, mdbModalBody, mdbModalFooter, mdbModalTitle } from 'mdbvue';
 export default {
 
     data(){
         return{
-            name: "buscador",
-            selected_prov: null,
-            selected_sex: null,
-            selected_size: null,
-            login: false,
+            name: "modalfiltros",
+            select_prov: null,
+            select_esp: null,
+            select_sex: null,
+            select_size: null,
+            showfilters: false,
             provincias: "",
             status: ""
             
@@ -92,9 +96,7 @@ export default {
     },
 
     computed:{
-        ...mapState([
-            'database'
-        ]),
+    //  filtered
 
     },
 }

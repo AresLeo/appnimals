@@ -1,0 +1,42 @@
+{
+    "status": "ok",
+    "protectoras": [
+        {   
+            "id": "",
+            "email": "",
+            "typeuser": "prote",
+            "nombre": "CAACB",
+            "provincia": "Barcelona",
+            "ciudad": "Barcelona",
+            "logo":"",
+            "informacion": "",
+            "website": "",
+            "facebook": "",
+            "instagram": "",
+            "tasasadopcion": "",
+            "requisitosadopcion": "",
+            "ayuda":""
+
+        },
+        {
+            "id": "",
+            "email": "",
+            "typeuser": "prote",
+            "nombre": "CAACB",
+            "provincia": "Barcelona",
+            "ciudad": "Barcelona",
+            "logo":"",
+            "informacion": "",
+            "website": "",
+            "facebook": "",
+            "instagram": "",
+            "tasasadopcion": "",
+            "requisitosadopcion": "",
+            "ayuda":""
+
+        }
+    
+
+    ]
+
+}
