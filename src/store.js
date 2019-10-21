@@ -1,7 +1,10 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import router from './router'
+import Router from 'vue-router'
 import firebase from "firebase";
-
+import "firebase/auth";
+import "firebase/database";
 
 
 // Add the Firebase products that you want to use
@@ -9,13 +12,15 @@ require("firebase/auth");
 require("firebase/database");
 
 
-Vue.use(Vuex)
+Vue.use(Vuex, Router, router)
 
 export default new Vuex.Store({
   state: {
-   typeuser:"",
+    rol: null,
     user: null,
+    photoURL: null,
     loadedAnimals:[],
+    loadedProtectoras:[],
     provincias:[  
       {"nprov": "Alava"},
       {"nprov": "Albacete"},
@@ -88,20 +93,24 @@ export default new Vuex.Store({
       {"especie": "Cerdo"},
       {"especie": "Reptil"},
       {"especie": "Otros"},
-    ],
+      ],
     size: [
-      {"tamaño": "Mini"},
-      {"tamaño": "Pequeño"},
-      {"tamaño": "Mediano"},
-      {"tamaño": "Grande"},
-
-    ]
+      {tamaño: "Mini"},
+      {tamaño: "Pequeño"},
+      {tamaño: "Mediano"},
+      {tamaño: "Grande"},
+      ]
   },
   getters:{
   getAnimalsData(state){
-    console.log(state.loadedAnimals); 
+    console.log("dentro de animals data del getter" + state.loadedAnimals); 
   return state.loadedAnimals
-},
+  },
+  getProtectorasData(state){
+    console.log(state.loadedProtectoras); 
+  return state.loadedProtectoras
+  },
+
   getProvincias(state){
     return state.provincias
   },
@@ -122,7 +131,10 @@ export default new Vuex.Store({
   state.loadedAnimals = value
   // console.log("clg value dentro de setAnimalsData"+ value)
   ;
-}
+},
+setProtectorasData(state, value) {
+  state.loadedProtectoras = value ;
+},
 
   },
 
@@ -164,7 +176,91 @@ export default new Vuex.Store({
           context.commit('setAnimalesData', animales)
       ;
       })
-  }
+  },
+  getProtectorasData(context){
+    firebase.database().ref('protectoras').once("value", data => {
+        console.log(data.val());
+        const protectoras = [];
+        const db= data.val();
+        for (let key in db){
+            protectoras.push({
+                id:db[key].id,                  
+                email:  db[key].email,
+                typeuser:  db[key].typeuser,
+                nombre: db[key].nombre,
+                provincia: db[key].provincia,
+                ciudad: db[key].ciudad,
+                logo: db[key].logo,
+                informacion: db[key].informacion,
+                website: db[key].website,
+                facebook: db[key].facebook,
+                instagram: db[key].instagram,
+               tasasdopcion: db[key].tasasdopcion,
+                requisitosadopcion: db[key].requisitosadopcion,
+                ayuda: db[key].ayuda
+            
+
+            })
+        };
+        console.log("console protectoras dentro de getData " + protectoras);
+        context.commit('setProtectorasData', protectoras)
+    ;
+    })
+},
+
+  registrarUser ({commit}, value) {
+
+    firebase.auth().createUserWithEmailAndPassword(value.email, value.password)
+      .then(
+        user => {
+          
+          const newUser = {
+            id: user.uid,
+            displayName: value.nombre,
+            animales: [],
+            favoritos: [],
+            rol:[]
+          }
+          commit('setUsers', newUser)
+        }
+      )
+      .catch(
+        error => {
+     
+          commit('setError', error)
+          console.log(error)
+        }
+      )
+  },
+  loginUser ({commit}, value) {
+
+    commit('clearError')
+    firebase.auth().signInWithEmailAndPassword(value.email, value.password)
+  
+      .catch(
+        error => {
+      var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log(errorCode);
+        console.log(errorMessage);
+        }
+      )
+    },
+    
+    logoutgoogle: function() {
+      firebase
+        .auth()
+        .signOut()
+        .then(() => {
+          this.$store.state.user = null; // Sign-out successful.
+          console.log("Logout");
+        })
+        .catch(function(error) {
+          console.log("Error logout"); // An error happened.
+        })
+        .then(() => router.replace('home'))
+        
+      }
   },
 
 

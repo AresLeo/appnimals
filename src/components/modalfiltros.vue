@@ -13,14 +13,14 @@
       </mdb-modal-header>
       <mdb-modal-body class="mx-3 grey-text">
         <h4>Provincia:</h4>
-    <b-form-select v-model="select_prov" class="mb-3">
+    <b-form-select v-model="filtros.select_prov" class="mb-3" >
         <option :value="null">Todas</option>
         <option v-for="(item, index) in $store.getters.getProvincias" :key="index"  :value="item.nprov">{{item.nprov}}</option>
 
     
     </b-form-select>
      <h4>Especie:</h4>
-    <b-form-select v-model="select_esp" class="mb-3">
+    <b-form-select v-model="filtros.select_esp" class="mb-3">
      
         <option :value="null">Todas</option>
         <option v-for="(item, index) in $store.getters.getEspecies" :key="index"  :value="item.especie">{{item.especie}}</option>
@@ -28,31 +28,34 @@
     </b-form-select>
 
          <h4>Sexo:</h4>
-    <b-form-select v-model="select_sex" class="mb-3">
+    <b-form-select v-model="filtros.select_sex" class="mb-3">
      
-        <option :value="null">Todos</option>
+        <option :value="null" selected="selected">Todos</option>
         <option :value="'Hembra'">Hembra</option>
         <option :value="'Macho'">Macho</option>
     
     </b-form-select>
          <h4>Tamaño:</h4>
-    <b-form-select v-model="select_size" class="mb-3">
-     
+    <b-form-select v-model="filtros.select_size" class="mb-3">     
         <option :value="null">Todos</option>
         <option v-for="(item, index) in $store.getters.getSize" :key="index"  :value="item.tamaño">{{item.tamaño}}</option>
-    
-    
-    </b-form-select>
+     </b-form-select>
       </mdb-modal-body>
       <mdb-modal-footer center>
-        <mdb-btn @click.native="buscar = false">Buscar</mdb-btn>
+        <mdb-btn @click="filter">Buscar</mdb-btn>
       </mdb-modal-footer>
     </mdb-modal>
 
         </b-col>
     </b-row>
-   
-   <p>{{select_size}}</p>
+<!--    
+   <p>{{arrayFiltros}}</p> -->
+   <p>modal  - {{filtros.select_esp}} - {{filtros.select_prov}}  - {{filtros.select_sex}} - {{filtros.select_size}} </p>
+
+    <b>filtros {{filtros}} </b>
+
+  
+
 
 </div>
 
@@ -66,13 +69,17 @@ export default {
     data(){
         return{
             name: "modalfiltros",
-            select_prov: null,
-            select_esp: null,
-            select_sex: null,
-            select_size: null,
+            filtros:{
+                select_prov: null,
+                select_esp: null,
+                select_sex: null,
+                select_size: null,
+            },
+   
             showfilters: false,
             provincias: "",
-            status: ""
+            status: "",
+           
             
         };
 
@@ -91,12 +98,17 @@ export default {
         mdbModalTitle,
         },
     methods: {
-      
-        
+      filter(){
+        var selectFilters = {filtros:this.filtros} //creamos la variable selecFilters, con la variable size y sex
+    
+     },
     },
 
     computed:{
-    //  filtered
+    
+
+    },
+    mounted(){
 
     },
 }

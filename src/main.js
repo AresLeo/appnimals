@@ -17,7 +17,8 @@ Vue.use(VueDragscroll)
 // Firebase App (the core Firebase SDK) is always required and
 // must be listed before other Firebase SDKs
 import firebase from "firebase";
-
+import "firebase/auth";
+import "firebase/database";
 Vue.config.productionTip = false
 
 
@@ -44,10 +45,10 @@ new Vue({
  
 
 
-    // para mantenerse logeado
+    // Mantiene login aunque refresques la pagina
     firebase.auth().onAuthStateChanged(user => { //hacemos esto para que al recargar no se desconecte el user
       if (user) {
-        console.log("Hay usuario");
+        console.log("Usuario Logueado");
         this.$store.commit("setUsers", firebase.auth().currentUser);
       } else {
         console.log("No user")
@@ -56,9 +57,6 @@ new Vue({
       }
     })
    
-
-
   },
-
 
 }).$mount('#app')

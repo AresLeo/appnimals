@@ -1,5 +1,5 @@
 <template>
-<b-row>
+<div class="container">
  <sliderfotoshome></sliderfotoshome>
    
   <b-row>
@@ -16,7 +16,7 @@
         <mdb-mask flex-center class="d-flex align-items-end" text="¡No compres, adopta!" />
       </mdb-view>
         <b-row>
-          <b-col cols="12">
+          <b-col cols="12" class="d-flex text-center">
         <h3 class="mt-4">Acercamos protectoras, asociaciones y perreras con posibles adoptantes de toda España. </h3>
       </b-col>
       </b-row>
@@ -24,10 +24,14 @@
 
     </b-col>
   </b-row>
+<!-- <b-row class="container-fluid"> 
+  <b-col cols="12" >
+  <footerpage></footerpage>
+   </b-col>
+</b-row> -->
+  
+</div>
 
- 
-</b-row>
- 
 
   
 
@@ -36,6 +40,7 @@
 <script>
 import sliderHome from '@/components/sliderHome.vue'
 import sliderfotoshome from '@/components/sliderfotoshome.vue'
+import footerpage from '@/components/footer.vue'
 import { mdbView, mdbMask, mdbBtn, mdbIcon, mdbFormInline, mdbInput, mdbContainer, mdbModal, mdbModalHeader, mdbModalBody, mdbModalFooter, mdbModalTitle } from 'mdbvue';
 
 export default {
@@ -44,6 +49,7 @@ export default {
     components: {
     sliderHome,
     sliderfotoshome,
+    footerpage,
     mdbView, mdbMask, 
     mdbBtn, 
     mdbIcon, 
@@ -78,6 +84,10 @@ p{
 h2{
     font-size: 1.5rem;
     text-align: center;
+}
+h3{
+  font-size: 1rem;
+  text-align: center;
 }
 
 }

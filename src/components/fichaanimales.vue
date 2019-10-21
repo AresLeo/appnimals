@@ -3,7 +3,8 @@
 <mdb-container>
     <mdb-row class="d-flex flex-row justify-content-start" >
       <mdb-col col="sm" class="p-2" v-for="(item, index) in $store.getters.getAnimalsData" :key="index">
-        <mdb-card class="fichas" >
+      <!-- <mdb-col col="sm" class="p-2" v-for="(item, index) in searchFilters" :key="index"> -->
+        <mdb-card class="fichas m-2" >
 		<mdb-view hover>
 			<a href="#!">
 			
@@ -37,8 +38,11 @@
 </template>
 <script>
 import firebase from "firebase";
+
 import { mdbRow, mdbIcon,mdbBadge, mdbCol, mdbCard, mdbCardImage, mdbCardBody, mdbCardTitle, mdbCardText, mdbBtn, mdbView, mdbMask, mdbContainer, mdbCardFooter, } from 'mdbvue';
-	export default {
+    
+    export default {
+        
         name: 'fichaanimales',
       
 		components: {
@@ -58,25 +62,20 @@ import { mdbRow, mdbIcon,mdbBadge, mdbCol, mdbCard, mdbCardImage, mdbCardBody, m
             mdbBadge
         },
         methods:{
-            getData(){
-                // if(this.$store.getAnimalsData != null){
-                this.$store.dispatch("getData")
-                // }else{
-                //     return 
-                // }
-            }
+
         },
   
         created(){
-            this.getData();
+
         },
-        computed:{
-    
+       computed:{
+           
         }
+    
     }
     
 </script>
-<style scope>
+<style scoped>
 .fichas{
     width: 300px;
     height: 460px;
@@ -89,7 +88,6 @@ import { mdbRow, mdbIcon,mdbBadge, mdbCol, mdbCard, mdbCardImage, mdbCardBody, m
 	width: 300px;
 	height: 300px;
 	object-fit: cover;
-
 }
 .card{
         border-top-left-radius: 25px;

@@ -10,30 +10,45 @@
             "ciudad": "Barcelona",
             "logo":"",
             "informacion": "",
-            "website": "",
-            "facebook": "",
+            "website": "http://ajuntament.barcelona.cat/benestaranimal/ca/centre-dacollida-danimals-de-companyia-caacb",
+            "facebook": "http://adoptabcn.cat",
             "instagram": "",
-            "tasasadopcion": "",
-            "requisitosadopcion": "",
-            "ayuda":""
+            "tasasadopcion": "35 €",
+            "requisitosadopcion": "Ara haureu de formalitzar l’adopció al centre d’acollida. Per a aquest tràmit us demanaran els requisits següents: Ser major d’edat. DNI. Signatura del contracte d’adopció. Pagament de la taxa d’adopció, que inclou vacunació, desparasitació, esterilització i microxip. En cas d'adoptar un gos recordi portar una corretja i en cas de ser un gat recordi portar un transportí",
+            "ayuda":"Ven a visitarnos"
 
         },
         {
             "id": "",
             "email": "",
             "typeuser": "prote",
+            "nombre": "Refugi La Vedruna",
+            "provincia": "Barcelona",
+            "ciudad": "Barcelona",
+            "logo":"protectoras/lavedruna.jpg",
+            "informacion": "Refugi d'animals on totes les habitants podran tenir la vida que es mereixen i viure envoltades d'amor sense importar l'espècie a la que pertanyen.",
+            "website": "",
+            "facebook": "https://www.facebook.com/Lavedruna/",
+            "instagram": "https://www.instagram.com/refugilavedruna",
+            "tasasadopcion": "",
+            "requisitosadopcion": "",
+            "ayuda":"https://www.teaming.net/lavedruna"
+        },
+        {
+            "id": "",
+            "email": "voluntaris.del.caac@gmail.com",
+            "typeuser": "prote",
             "nombre": "CAACB",
             "provincia": "Barcelona",
             "ciudad": "Barcelona",
-            "logo":"",
-            "informacion": "",
-            "website": "",
-            "facebook": "",
-            "instagram": "",
-            "tasasadopcion": "",
-            "requisitosadopcion": "",
+            "logo":"protectoras/amics.jpg",
+            "informacion": "L’ Associació d’Amics i Voluntaris de la Gossera de Barcelona va ser creada a l’any 2007 per un grup de voluntaris que, davant la precària situació en què es trobava el centre en aquells moments, van voler unir forces amb l’objectiu de millorar la qualitat de vida dels animals del Centre d’Acolliment d’Animals de Companyia de Barcelona (CAACB). En aquell moment, mitjançant l’Associació es va fer pressió per tal de construir una nova gossera i dignificar la situació dels animals acollits al centre i la dels propis voluntaris.",
+            "website": "https://associaciovoluntariscaac.wordpress.com",
+            "facebook": "https://www.facebook.com/as.amicsivoluntarisgosserabcn/",
+            "instagram": "https://www.instagram.com/as.amicsivoluntarisgosserabcn/",
+            "tasasadopcion": "35 €",
+            "requisitosadopcion": "Ara haureu de formalitzar l’adopció al centre d’acollida. Per a aquest tràmit us demanaran els requisits següents: Ser major d’edat. DNI. Signatura del contracte d’adopció. Pagament de la taxa d’adopció, que inclou vacunació, desparasitació, esterilització i microxip. En cas d'adoptar un gos recordi portar una corretja i en cas de ser un gat recordi portar un transportí",
             "ayuda":""
-
         }
     
 

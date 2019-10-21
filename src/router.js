@@ -32,6 +32,16 @@ export default new Router({
       path: '/registro',
       name: 'registro',
       component: () => import(/* webpackChunkName: "registro" */ './views/registro.vue')
+    },
+    {
+      path: '/perfil',
+      name: 'perfil',
+      component: () => import(/* webpackChunkName: "perfil" */ './views/perfil.vue')
+    },
+    {
+      path: '/perfilProtectora',
+      name: 'perfilProtectora',
+      component: () => import(/* webpackChunkName: "perfil" */ './views/perfilProtectora.vue')
     }
   ]
 })

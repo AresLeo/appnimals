@@ -1,43 +1,39 @@
 <template>
-<!--     
-  <mdb-container>
-    <b-nav-item @click="login=true" :class="p-0">Login<mdb-icon icon="user-alt" /></b-nav-item>
-    <mdb-modal :show="login" @close="login = false">
-      <mdb-modal-header class="text-center">
-        <mdb-modal-title tag="h4" bold class="w-100">Sign in</mdb-modal-title>
-      </mdb-modal-header>
-      <mdb-modal-body class="mx-3 grey-text">
-        <mdb-input label="Your email" icon="envelope" type="email" class="mb-5"/>
-        <mdb-input label="Your password" icon="lock" type="password"/>
-      </mdb-modal-body>
-      <mdb-modal-footer center>
-        <mdb-btn @click.native="login = false">Login</mdb-btn>
-      </mdb-modal-footer>
-    </mdb-modal>
-  </mdb-container> -->
+
 <mdb-container >
   <!-- Material form login -->
-  <form class="frameform">
+  <form class="frameform"  @submit.prevent="onSignin">
+    <!-- PRUEBA: {{this.$store.state.user.displayName}} 
+    PRUEBA TODO: {{this.$store.state.user}} -->
+
     <p class="h4 text-center mb-4">Iniciar sesión</p>
     <div class="grey-text">
       <mdb-input label="Email" icon="envelope" type="email"/>
       <mdb-input label="Password" icon="lock" type="password"/>
     </div>
-    <div class="text-center">
-      <mdb-btn color="info">Login</mdb-btn>
+     <div class="text-center">
+      <mdb-btn color="info" >Login</mdb-btn>
     </div>
+
   </form>
-      <button @click="logingoogle" color="default">Login con google</button>
+   <div class="text-center">
+      <mdb-btn type="submit" color="default" @click="logingoogle" >Login con google <mdb-icon fab icon="google" class="ml-2" /></mdb-btn>
+    </div>
+    
 
 </mdb-container>
 
 </template>
 <script>
+
 import firebase from "firebase";
+
+import main from "@/main.js"
+
 import { mdbInput, mdbBtn , mdbContainer, mdbIcon} from 'mdbvue';
 export default {
 
-    name: "login",
+  
             components: {
             mdbContainer,
             mdbInput,
@@ -46,6 +42,9 @@ export default {
             },
      data(){
         return{
+          name: "login",
+          email: "",
+          password: "",
             }
            
       },
@@ -58,12 +57,29 @@ export default {
         .then(user => {
           console.log(user);
           if (user) {
-            this.$store.commit("setUsers", firebase.auth().currentUser); // En el store mediante el setUsers se guards nuestros datos de autentificación.
+            this.$store.commit("setUsers", firebase.auth().currentUser); // En el store mediante el setUsers se guarda nuestros datos de autentificación.
           }
         });
       console.log("login");
       
       },
+      // login: function(){
+         
+      //   var email = this.email.toString().trim();
+      //   var password = this.password.toString().trim();
+      //   firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+      //   // Handle Errors here.
+      //   var errorCode = error.code;
+      //   var errorMessage = error.message;
+      //   console.log(errorCode);
+      //   console.log(errorMessage);
+
+  
+// });
+      onSignin () {
+        this.$store.dispatch('loginUser', {email: this.email, password: this.password})
+      },
+      
       
     
     }
