@@ -1,10 +1,9 @@
 <template>
 
 <mdb-container>
-    <mdb-row class="d-flex flex-row justify-content-start" >
-      <mdb-col col="sm" class="p-2" v-for="(item, index) in $store.getters.getAnimalsData" :key="index">
+    <mdb-row class="d-flex justify-content-center" >
       <!-- <mdb-col col="sm" class="p-2" v-for="(item, index) in searchFilters" :key="index"> -->
-        <mdb-card class="fichas m-2" >
+        <mdb-card class="fichas m-4" v-for="(item, index) in $store.getters.getAnimalsData" :key="index">
 		<mdb-view hover>
 			<a href="#!">
 			
@@ -31,7 +30,6 @@
 
         </mdb-view>
         </mdb-card>
-        </mdb-col>
     </mdb-row>
   </mdb-container>
   

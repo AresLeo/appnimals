@@ -49,12 +49,12 @@
         </b-col>
     </b-row>
 <!--    
-   <p>{{arrayFiltros}}</p> -->
+   <p>{{arrayFiltros}}</p> 
    <p>modal  - {{filtros.select_esp}} - {{filtros.select_prov}}  - {{filtros.select_sex}} - {{filtros.select_size}} </p>
 
     <b>filtros {{filtros}} </b>
 
-  
+  -->
 
 
 </div>
@@ -100,7 +100,7 @@ export default {
     methods: {
       filter(){
         var selectFilters = {filtros:this.filtros} //creamos la variable selecFilters, con la variable size y sex
-    
+
      },
     },
 

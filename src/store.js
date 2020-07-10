@@ -103,11 +103,11 @@ export default new Vuex.Store({
   },
   getters:{
   getAnimalsData(state){
-    console.log("dentro de animals data del getter" + state.loadedAnimals); 
-  return state.loadedAnimals
+    //console.log("dentro de animals data del getter" + state.loadedAnimals); 
+    return state.loadedAnimals
   },
   getProtectorasData(state){
-    console.log(state.loadedProtectoras); 
+    //console.log(state.loadedProtectoras); 
   return state.loadedProtectoras
   },
 
@@ -139,14 +139,15 @@ setProtectorasData(state, value) {
   },
 
   methods: {
- 
+      filterAnimalesData: function () {
+
+      }
     },
   
  
   actions: {
     getData(context){
       firebase.database().ref('animales').once("value", data => {
-          // console.log(data.val());
           const animales = [];
           const db= data.val();
           for (let key in db){
@@ -179,7 +180,7 @@ setProtectorasData(state, value) {
   },
   getProtectorasData(context){
     firebase.database().ref('protectoras').once("value", data => {
-        console.log(data.val());
+        //console.log(data.val());
         const protectoras = [];
         const db= data.val();
         for (let key in db){
@@ -202,7 +203,7 @@ setProtectorasData(state, value) {
 
             })
         };
-        console.log("console protectoras dentro de getData " + protectoras);
+        //console.log("console protectoras dentro de getData " + protectoras);
         context.commit('setProtectorasData', protectoras)
     ;
     })

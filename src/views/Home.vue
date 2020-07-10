@@ -9,7 +9,7 @@
     <img class="logo mt-2" src="@/assets/images/appnimals_logo.png">
       </b-col>
         <b-col cols="12"  class="d-flex justify-content-center">
-        <h2>¡Appsnimals te ayudará a encontrar a tu compi ideal!</h2>
+        <h3 >¡Appsnimals te ayudará a encontrar a tu compi ideal!</h3>
          </b-col>
 
          <mdb-view class="img_hamster zoom overlay " src="https://images.unsplash.com/photo-1425082661705-1834bfd09dca?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1055&q=80" alt="zoom">
@@ -20,15 +20,9 @@
         <h3 class="mt-4">Acercamos protectoras, asociaciones y perreras con posibles adoptantes de toda España. </h3>
       </b-col>
       </b-row>
-      
-
     </b-col>
   </b-row>
-<!-- <b-row class="container-fluid"> 
-  <b-col cols="12" >
-  <footerpage></footerpage>
-   </b-col>
-</b-row> -->
+
   
 </div>
 
@@ -77,6 +71,7 @@ p{
 .img_hamster{
   width: 350px;
 }
+
 @media (max-width: 400px) {
 .logo{
   width: 65%;

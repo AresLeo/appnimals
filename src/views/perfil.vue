@@ -5,7 +5,7 @@
 				<mdb-card wide class="d-flex justify-content-center">
 					<mdb-view hover cascade >
 
-                            <mdb-card-image flex-center :src="$store.state.user.photoURL" alt="Card image cap"  ></mdb-card-image>
+                            <mdb-card-image flex-center :src="$store.state.user.photoURL" alt="Profile Image"  ></mdb-card-image>
 							<mdb-mask flex-center waves overlay="white-slight"></mdb-mask>
 			
 					</mdb-view>

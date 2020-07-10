@@ -1,21 +1,19 @@
 <template>
-    <mdb-footer color="light" class="font-small pt-4 mt-4">
-    <mdb-container class="text-left">
-      <mdb-row>
-
-        <mdb-col sm="12" class="d-flex flex-row justify-content-center">
-          <h5 class="title"><a href="#!"><mdb-icon fab icon="facebook-square" /></a></h5>
-          <h5 class="title"><a href="#!"><mdb-icon fab icon="instagram" /></a></h5>
-           
-        </mdb-col>
-      </mdb-row>
+    <mdb-footer color="grey darken-4" class="page-footer font-small pt-4 mt-4 ">
+    <mdb-container class="text-center">
+        <mdb-row>
+          <mdb-col sm="12" class="d-flex justify-content-center">
+            <h5 class="title m-2"><a href="#!"><mdb-icon fab icon="facebook-square" /></a></h5>
+            <h5 class="title m-2"><a href="#!"><mdb-icon fab icon="instagram" /></a></h5>
+          </mdb-col>
+        </mdb-row>
+        <mdb-row>
+            <mdb-col sm="12" class="d-flex justify-content-center">
+              <p class="m-2 light-blue-text">2020 Copyright: </p> <a href="#" class="m-2 font-weight-bold light-blue-text"> Appnimals </a>
+            </mdb-col>
+        </mdb-row>
     </mdb-container >
     
-    <div class="footer-copyright text-center py-3">
-      <mdb-container fluid>
-        &copy; 2019 Copyright: <a href="https://www.MDBootstrap.com"> Appnimals </a>
-      </mdb-container>
-    </div>
   </mdb-footer>
   <!-- Footer -->
 </template>

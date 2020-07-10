@@ -1,30 +1,36 @@
 <template>
       <mdb-container>
-           <h3 class="m-2">Listado Protectoras y Asociaciones: </h3>
-    <mdb-row class="d-flex flex-row justify-content-center" >
-       
+        <b-row>
 
-      <mdb-col sm="2" col="md-3" class="p-2" v-for="(item, index) in $store.getters.getProtectorasData" :key="index">
-		<mdb-card cascade class="fichas" >
-        <mdb-view hover >
-                              
-			<a href="#!">			
-                <img class="objetfit" :src="item.logo">            
-				<mdb-mask flex-center waves overlay="white-slight"></mdb-mask>
-                
-			</a>
-		    </mdb-view> 
-            <mdb-view  class="fondoficha" cascade>
-			<mdb-card-body >
-						<mdb-card-title class="d-flex justify-content-between">{{item.nombre}}</mdb-card-title>
-						<mdb-card-text class="m-2 d-flex justify-content-between">{{item.ciudad}}</mdb-card-text>
-					
-			</mdb-card-body>
-             </mdb-view>
-            </mdb-card>
-			</mdb-col>
-    </mdb-row>
-  </mdb-container>
+            <b-col cols="12">
+           <h4  class="mt-4">Listado Protectoras y Asociaciones: </h4>
+           </b-col>
+    </b-row>
+
+        <mdb-row class="d-flex flex-row justify-content-center" >
+        
+
+        <mdb-col sm="2" col="md-3" class="p-2" v-for="(item, index) in $store.getters.getProtectorasData" :key="index">
+            <mdb-card cascade class="fichas" >
+            <mdb-view hover >
+                                
+                <a href="#!">			
+                    <img class="objetfit" :src="item.logo">            
+                    <mdb-mask flex-center waves overlay="white-slight"></mdb-mask>
+                    
+                </a>
+                </mdb-view> 
+                <mdb-view  class="fondoficha" cascade>
+                <mdb-card-body >
+                            <mdb-card-title class="d-flex justify-content-between black-text">{{item.nombre}}</mdb-card-title>
+                            <mdb-card-text class="m-2 d-flex justify-content-between">{{item.ciudad}}</mdb-card-text>
+                        
+                </mdb-card-body>
+                </mdb-view>
+                </mdb-card>
+                </mdb-col>
+        </mdb-row>
+    </mdb-container>
 </template>
 <script>
 import firebase from "firebase";
